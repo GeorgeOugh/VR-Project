@@ -11,6 +11,8 @@ public class FirstPersonCameraScript : MonoBehaviour
 
     // Animation Trees
     public Animator cowboyHatAnimator;
+    public Animator WagonAnimator;
+    public Animator HornsAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,26 @@ public class FirstPersonCameraScript : MonoBehaviour
             if (hit.collider.name != ("Cowboy Hat"))
             {
                 cowboyHatAnimator.SetBool("isTriggered", false);
+            }
+
+            if (hit.collider.name == ("Wagon"))
+            {
+                WagonAnimator.SetBool("isTriggered", true);
+                Debug.Log("hit hat");
+            }
+            if (hit.collider.name != ("Wagon"))
+            {
+                WagonAnimator.SetBool("isTriggered", false);
+            }
+
+            if (hit.collider.name == ("Horns"))
+            {
+                HornsAnimator.SetBool("isTriggered", true);
+                Debug.Log("hit hat");
+            }
+            if (hit.collider.name != ("Horns"))
+            {
+                HornsAnimator.SetBool("isTriggered", false);
             }
         }
 
